@@ -28,12 +28,12 @@ process.stdin.on('data', function (data) {
   if (commands[cmd] != undefined){
       //console.log(commands[cmd]());
     cmd = commands[cmd]();
+    } else {
+
+
+    process.stdout.write('You typed: ' + cmd);
+    process.stdout.write('\nprompt > ');
     }
-
-
-  process.stdout.write('You typed: ' + cmd);
-  process.stdout.write('\nprompt > ');
-
 });
 
 

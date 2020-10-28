@@ -25,50 +25,37 @@ module.exports = {
     
     pwd: function() {
         //console.log("hellooooo!!" + x)   
-        return __dirname;
-       
+        //return __dirname;
+        console.log('You typed: ' +  __dirname);
+        process.stdout.write('prompt > ');
+
     },
 
-    // date: function() {
-    //         return new Date();    
-    // },
+    date: function() {
+        //return new Date();
+        console.log('You typed: ' +  new Date());
+        process.stdout.write('prompt > ');    
+    },
 
-    // ls: function() {
-    //     //console.log('ls')        
+    ls: function() {
+        //console.log('ls')        
    
-    //     var fs = require('fs');
+        var fs = require('fs');
 
-    //     var strOne = '';
-
-    //     //console.log(fs);
-
-    //     //return 'hello';
-
-    //     //so readdir does not return a string but readdirSync can arggh
-    //     //definietly need to ask about this 
-    //     return fs.readdirSync('.', 'utf8', function(err, files) {
-    //         var strTwo = "";
-    //         if (err) throw err;
-    //         //console.log(files);
-    //         //str = files.toString()
-    //         files.forEach(function(file) {
-    //            strTwo += file.toString() + "\n"; 
-    //           //process.stdout.write(file.toString() + "\n");
-    //           //console.log("----file----"); 
-    //           //console.log(file);
-    //         })
-    //         console.log('----strTwo----');
-    //         console.log(strTwo);
+        //so readdir does not return a string but readdirSync can arggh
+        //definietly need to ask about this 
+        fs.readdir('.', 'utf8', function(err, files) {
+            var strTwo = "";
+            if (err) throw err;
+            files.forEach(function(file) {
+              process.stdout.write(file.toString() + "\n");
+            })
           
-    //         return strTwo;
-    //         //process.stdout.write("prompt > ");
-    //       });
-    //     //string is undefined here
-    //     // console.log('----str----');
-    //     // console.log(str);
-
-    // return strOne;
-    // }
+            process.stdout.write('prompt > '); 
+          });
+        //console.log('end')
+        //process.stdout.write('prompt > ');
+    }
 
     
 }
