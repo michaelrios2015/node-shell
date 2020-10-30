@@ -25,9 +25,11 @@ process.stdin.on('data', function (data) {
 
   // commands[userCommand]();
   //commands[userCommand](cmd);
-  if (commands[cmd] != undefined){
-      //console.log(commands[cmd]());
-    cmd = commands[cmd]();
+  cmd = cmd.split(' ');  
+    console.log(cmd[0]);
+  if (commands[cmd[0]] != undefined){
+    
+    cmd = commands[cmd[0]](cmd);
     } else {
 
 

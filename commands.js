@@ -23,7 +23,7 @@
 module.exports = {
     
     
-    pwd: function() {
+    pwd: function(arg) {
         //console.log("hellooooo!!" + x)   
         //return __dirname;
         console.log('You typed: ' +  __dirname);
@@ -31,13 +31,13 @@ module.exports = {
 
     },
 
-    date: function() {
+    date: function(arg) {
         //return new Date();
         console.log('You typed: ' +  new Date());
         process.stdout.write('prompt > ');    
     },
 
-    ls: function() {
+    ls: function(arg) {
         //console.log('ls')        
    
         var fs = require('fs');
@@ -55,7 +55,16 @@ module.exports = {
           });
         //console.log('end')
         //process.stdout.write('prompt > ');
-    }
+    },
 
+    echo: function(words){
+
+        //const arr = words.split(' ');
+        //console.log("con " + words.splice(0 ,1));
+        console.log('You typed: ' +  words.slice(1).join(' '));
+        process.stdout.write('prompt > ');
+
+
+    }
     
 }
